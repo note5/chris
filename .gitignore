@@ -1,0 +1,9 @@
+# Include portfolio files
+!index.html
+!ChristopherBartonjoResume.pdf
+!README.md
+!.gitignore
+
+# Ignore everything else except portfolio
+app/
+backup/
