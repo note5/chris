@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christopher Bartonjo - Full Stack Developer & Mechatronics Engineer</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- Vue 3 -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
             position: relative;
             overflow: hidden;
         }
-        
+
         .gradient-bg::before {
             content: '';
             position: absolute;
@@ -32,23 +33,23 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(251, 146, 60, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(34, 197, 94, 0.2) 0%, transparent 50%);
             animation: circuitGlow 8s ease-in-out infinite alternate;
         }
-        
+
         .circuit-bg {
             background-color: #0f172a;
-            background-image: 
+            background-image:
                 linear-gradient(90deg, rgba(34, 197, 94, 0.1) 1px, transparent 1px),
                 linear-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
             position: relative;
             overflow: hidden;
         }
-        
+
         .circuit-bg::before {
             content: '';
             position: absolute;
@@ -56,7 +57,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 10% 20%, rgba(251, 146, 60, 0.1) 2px, transparent 2px),
                 radial-gradient(circle at 30% 60%, rgba(34, 197, 94, 0.1) 2px, transparent 2px),
                 radial-gradient(circle at 60% 30%, rgba(251, 146, 60, 0.1) 2px, transparent 2px),
@@ -64,109 +65,146 @@
             background-size: 100px 100px, 150px 150px, 200px 200px, 120px 120px;
             animation: circuitFlow 10s linear infinite;
         }
-        
+
         .tech-card {
             background: linear-gradient(145deg, #1e293b, #334155);
             border: 1px solid rgba(34, 197, 94, 0.2);
             transition: all 0.4s ease;
         }
-        
+
         .tech-card:hover {
             transform: translateY(-10px) rotateX(5deg);
-            box-shadow: 
+            box-shadow:
                 0 20px 40px rgba(0, 0, 0, 0.4),
                 0 0 20px rgba(34, 197, 94, 0.3);
             border-color: rgba(251, 146, 60, 0.5);
         }
-        
+
         .floating {
             animation: floating 4s ease-in-out infinite;
         }
-        
+
         .pulse-glow {
             animation: pulseGlow 3s ease-in-out infinite;
         }
-        
+
         .circuit-line {
             animation: circuitPulse 2s ease-in-out infinite;
         }
-        
+
         .rotate-slow {
             animation: rotateSlow 20s linear infinite;
         }
-        
+
         .skill-bar {
             transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
             background: linear-gradient(90deg, #22c55e, #f59e0b);
             box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
         }
-        
+
         .neon-text {
-            text-shadow: 
+            text-shadow:
                 0 0 5px rgba(34, 197, 94, 0.8),
                 0 0 10px rgba(34, 197, 94, 0.6),
                 0 0 15px rgba(34, 197, 94, 0.4);
         }
-        
+
         .neon-orange {
-            text-shadow: 
+            text-shadow:
                 0 0 5px rgba(251, 146, 60, 0.8),
                 0 0 10px rgba(251, 146, 60, 0.6),
                 0 0 15px rgba(251, 146, 60, 0.4);
         }
-        
+
         @keyframes floating {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(2deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(2deg);
+            }
         }
-        
+
         @keyframes pulseGlow {
-            0%, 100% { 
+
+            0%,
+            100% {
                 box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
                 transform: scale(1);
             }
-            50% { 
+
+            50% {
                 box-shadow: 0 0 30px rgba(251, 146, 60, 0.5);
                 transform: scale(1.05);
             }
         }
-        
+
         @keyframes circuitGlow {
-            0% { opacity: 0.8; }
-            100% { opacity: 1; }
+            0% {
+                opacity: 0.8;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
-        
+
         @keyframes circuitFlow {
-            0% { transform: translateX(0) translateY(0); }
-            25% { transform: translateX(-10px) translateY(-5px); }
-            50% { transform: translateX(-20px) translateY(0); }
-            75% { transform: translateX(-10px) translateY(5px); }
-            100% { transform: translateX(0) translateY(0); }
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+
+            25% {
+                transform: translateX(-10px) translateY(-5px);
+            }
+
+            50% {
+                transform: translateX(-20px) translateY(0);
+            }
+
+            75% {
+                transform: translateX(-10px) translateY(5px);
+            }
+
+            100% {
+                transform: translateX(0) translateY(0);
+            }
         }
-        
+
         @keyframes circuitPulse {
-            0%, 100% { 
+
+            0%,
+            100% {
                 border-color: rgba(34, 197, 94, 0.3);
                 box-shadow: 0 0 5px rgba(34, 197, 94, 0.2);
             }
-            50% { 
+
+            50% {
                 border-color: rgba(251, 146, 60, 0.6);
                 box-shadow: 0 0 15px rgba(251, 146, 60, 0.4);
             }
         }
-        
+
         @keyframes rotateSlow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         .experience-card {
             background: linear-gradient(145deg, #1e293b, #334155);
             border-left: 4px solid #22c55e;
             position: relative;
             overflow: hidden;
         }
-        
+
         .experience-card::before {
             content: '';
             position: absolute;
@@ -178,29 +216,37 @@
             transform: translateX(-100%);
             transition: transform 0.6s ease;
         }
-        
+
         .experience-card:hover::before {
             transform: translateX(100%);
         }
-        
+
         .nav-blur {
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(34, 197, 94, 0.2);
         }
-        
+
         .section-divider {
             height: 2px;
             background: linear-gradient(90deg, transparent, #22c55e, #f59e0b, transparent);
             animation: dividerPulse 3s ease-in-out infinite;
         }
-        
+
         @keyframes dividerPulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
+
 <body class="bg-slate-900 text-gray-100">
     <div id="app">
         <!-- Navigation -->
@@ -211,12 +257,24 @@
                         <span class="neon-text"><i class="fas fa-microchip mr-2"></i>CB</span>
                     </div>
                     <div class="hidden md:flex space-x-8">
-                        <a href="#home" @click="activeSection = 'home'" :class="{'text-green-400 neon-text': activeSection === 'home'}" class="text-gray-300 hover:text-green-400 transition">Home</a>
-                        <a href="#about" @click="activeSection = 'about'" :class="{'text-green-400 neon-text': activeSection === 'about'}" class="text-gray-300 hover:text-green-400 transition">About</a>
-                        <a href="#experience" @click="activeSection = 'experience'" :class="{'text-green-400 neon-text': activeSection === 'experience'}" class="text-gray-300 hover:text-green-400 transition">Experience</a>
-                        <a href="#skills" @click="activeSection = 'skills'" :class="{'text-green-400 neon-text': activeSection === 'skills'}" class="text-gray-300 hover:text-green-400 transition">Skills</a>
-                        <a href="#projects" @click="activeSection = 'projects'" :class="{'text-green-400 neon-text': activeSection === 'projects'}" class="text-gray-300 hover:text-green-400 transition">Projects</a>
-                        <a href="#contact" @click="activeSection = 'contact'" :class="{'text-green-400 neon-text': activeSection === 'contact'}" class="text-gray-300 hover:text-green-400 transition">Contact</a>
+                        <a href="#home" @click="activeSection = 'home'"
+                            :class="{'text-green-400 neon-text': activeSection === 'home'}"
+                            class="text-gray-300 hover:text-green-400 transition">Home</a>
+                        <a href="#about" @click="activeSection = 'about'"
+                            :class="{'text-green-400 neon-text': activeSection === 'about'}"
+                            class="text-gray-300 hover:text-green-400 transition">About</a>
+                        <a href="#experience" @click="activeSection = 'experience'"
+                            :class="{'text-green-400 neon-text': activeSection === 'experience'}"
+                            class="text-gray-300 hover:text-green-400 transition">Experience</a>
+                        <a href="#skills" @click="activeSection = 'skills'"
+                            :class="{'text-green-400 neon-text': activeSection === 'skills'}"
+                            class="text-gray-300 hover:text-green-400 transition">Skills</a>
+                        <a href="#projects" @click="activeSection = 'projects'"
+                            :class="{'text-green-400 neon-text': activeSection === 'projects'}"
+                            class="text-gray-300 hover:text-green-400 transition">Projects</a>
+                        <a href="#contact" @click="activeSection = 'contact'"
+                            :class="{'text-green-400 neon-text': activeSection === 'contact'}"
+                            class="text-gray-300 hover:text-green-400 transition">Contact</a>
                     </div>
                     <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-green-400">
                         <i class="fas fa-bars text-xl"></i>
@@ -224,12 +282,18 @@
                 </div>
                 <!-- Mobile Menu -->
                 <div v-show="mobileMenuOpen" class="md:hidden py-4 border-t border-green-400/20">
-                    <a href="#home" @click="activeSection = 'home'; mobileMenuOpen = false" class="block py-2 text-gray-300 hover:text-green-400 transition">Home</a>
-                    <a href="#about" @click="activeSection = 'about'; mobileMenuOpen = false" class="block py-2 text-gray-300 hover:text-green-400 transition">About</a>
-                    <a href="#experience" @click="activeSection = 'experience'; mobileMenuOpen = false" class="block py-2 text-gray-300 hover:text-green-400 transition">Experience</a>
-                    <a href="#skills" @click="activeSection = 'skills'; mobileMenuOpen = false" class="block py-2 text-gray-300 hover:text-green-400 transition">Skills</a>
-                    <a href="#projects" @click="activeSection = 'projects'; mobileMenuOpen = false" class="block py-2 text-gray-300 hover:text-green-400 transition">Projects</a>
-                    <a href="#contact" @click="activeSection = 'contact'; mobileMenuOpen = false" class="block py-2 text-gray-300 hover:text-green-400 transition">Contact</a>
+                    <a href="#home" @click="activeSection = 'home'; mobileMenuOpen = false"
+                        class="block py-2 text-gray-300 hover:text-green-400 transition">Home</a>
+                    <a href="#about" @click="activeSection = 'about'; mobileMenuOpen = false"
+                        class="block py-2 text-gray-300 hover:text-green-400 transition">About</a>
+                    <a href="#experience" @click="activeSection = 'experience'; mobileMenuOpen = false"
+                        class="block py-2 text-gray-300 hover:text-green-400 transition">Experience</a>
+                    <a href="#skills" @click="activeSection = 'skills'; mobileMenuOpen = false"
+                        class="block py-2 text-gray-300 hover:text-green-400 transition">Skills</a>
+                    <a href="#projects" @click="activeSection = 'projects'; mobileMenuOpen = false"
+                        class="block py-2 text-gray-300 hover:text-green-400 transition">Projects</a>
+                    <a href="#contact" @click="activeSection = 'contact'; mobileMenuOpen = false"
+                        class="block py-2 text-gray-300 hover:text-green-400 transition">Contact</a>
                 </div>
             </div>
         </nav>
@@ -247,28 +311,39 @@
                             Full Stack Developer & Mechatronics Engineer
                         </p>
                         <p class="text-lg mb-8 text-gray-300 opacity-80">
-                            Bridging the gap between hardware and software with innovative IoT solutions, 
+                            Bridging the gap between hardware and software with innovative IoT solutions,
                             GIS applications, and full-stack web development.
                         </p>
                         <div class="flex flex-wrap gap-4">
-                            <a href="#contact" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-3 rounded-full font-semibold transition-all pulse-glow">
+                            <a href="#contact"
+                                class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-3 rounded-full font-semibold transition-all pulse-glow">
                                 <i class="fas fa-envelope mr-2"></i>Get In Touch
                             </a>
-                            <a href="./ChristopherBartonjoResume.pdf" target="_blank" class="border-2 border-orange-500 text-orange-400 px-8 py-3 rounded-full font-semibold hover:bg-orange-500 hover:text-white transition-all circuit-line">
+                            <a href="./ChristopherBartonjoResume.pdf" target="_blank"
+                                class="border-2 border-orange-500 text-orange-400 px-8 py-3 rounded-full font-semibold hover:bg-orange-500 hover:text-white transition-all circuit-line">
                                 <i class="fas fa-download mr-2"></i>Download CV
                             </a>
                         </div>
                     </div>
                     <div class="text-center relative z-10" data-aos="fade-left">
                         <div class="relative">
-                            <div class="w-80 h-80 mx-auto bg-gradient-to-br from-green-900/20 to-slate-800/20 backdrop-blur-sm rounded-full flex items-center justify-center floating border-2 border-green-500/30 pulse-glow">
-                                <div class="absolute inset-4 border border-orange-500/20 rounded-full rotate-slow"></div>
-                                <div class="absolute inset-8 border border-green-500/20 rounded-full rotate-slow" style="animation-direction: reverse;"></div>
+                            <div
+                                class="w-80 h-80 mx-auto bg-gradient-to-br from-green-900/20 to-slate-800/20 backdrop-blur-sm rounded-full flex items-center justify-center floating border-2 border-green-500/30 pulse-glow">
+                                <div class="absolute inset-4 border border-orange-500/20 rounded-full rotate-slow">
+                                </div>
+                                <div class="absolute inset-8 border border-green-500/20 rounded-full rotate-slow"
+                                    style="animation-direction: reverse;"></div>
                                 <i class="fas fa-microchip text-8xl text-green-400 neon-text relative z-10"></i>
                             </div>
-                            <div class="absolute top-10 left-10 w-4 h-4 bg-orange-500 rounded-full pulse-glow opacity-60"></div>
-                            <div class="absolute bottom-20 right-16 w-3 h-3 bg-green-400 rounded-full pulse-glow opacity-80"></div>
-                            <div class="absolute top-1/2 left-0 w-2 h-2 bg-orange-400 rounded-full pulse-glow opacity-70"></div>
+                            <div
+                                class="absolute top-10 left-10 w-4 h-4 bg-orange-500 rounded-full pulse-glow opacity-60">
+                            </div>
+                            <div
+                                class="absolute bottom-20 right-16 w-3 h-3 bg-green-400 rounded-full pulse-glow opacity-80">
+                            </div>
+                            <div
+                                class="absolute top-1/2 left-0 w-2 h-2 bg-orange-400 rounded-full pulse-glow opacity-70">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -282,36 +357,42 @@
                     <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 neon-text">About Me</h2>
                     <div class="section-divider w-24 mx-auto mb-8"></div>
                 </div>
-                
+
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div data-aos="fade-right">
                         <h3 class="text-2xl font-bold text-white mb-6">
                             <i class="fas fa-user text-green-400 mr-3"></i>Professional Summary
                         </h3>
                         <p class="text-gray-300 mb-6 leading-relaxed">
-                            I am a self-motivated, honest and cooperative professional with a unique blend of mechatronics 
-                            engineering and full-stack development expertise. My journey spans from designing IoT devices 
+                            I am a self-motivated, honest and cooperative professional with a unique blend of
+                            mechatronics
+                            engineering and full-stack development expertise. My journey spans from designing IoT
+                            devices
                             and embedded systems to creating sophisticated web applications and GIS platforms.
                         </p>
                         <p class="text-gray-300 mb-6 leading-relaxed">
-                            With over 7 years of experience, I specialize in bridging the hardware-software divide, 
-                            creating end-to-end solutions that range from sensor networks to user-friendly web interfaces.
+                            With over 7 years of experience, I specialize in bridging the hardware-software divide,
+                            creating end-to-end solutions that range from sensor networks to user-friendly web
+                            interfaces.
                         </p>
-                        
+
                         <div class="grid grid-cols-2 gap-4 mb-8">
-                            <div class="text-center p-4 bg-gradient-to-br from-green-900/40 to-slate-800/40 rounded-lg border border-green-500/30 tech-card">
+                            <div
+                                class="text-center p-4 bg-gradient-to-br from-green-900/40 to-slate-800/40 rounded-lg border border-green-500/30 tech-card">
                                 <div class="text-3xl font-bold text-green-400 neon-text">50+</div>
                                 <div class="text-gray-300">Projects Completed</div>
                             </div>
-                            <div class="text-center p-4 bg-gradient-to-br from-orange-900/40 to-slate-800/40 rounded-lg border border-orange-500/30 tech-card">
+                            <div
+                                class="text-center p-4 bg-gradient-to-br from-orange-900/40 to-slate-800/40 rounded-lg border border-orange-500/30 tech-card">
                                 <div class="text-3xl font-bold text-orange-400 neon-orange">7+</div>
                                 <div class="text-gray-300">Years Experience</div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div data-aos="fade-left">
-                        <div class="bg-gradient-to-br from-slate-800/60 to-slate-900/60 p-8 rounded-lg border border-green-500/20 backdrop-blur-sm tech-card">
+                        <div
+                            class="bg-gradient-to-br from-slate-800/60 to-slate-900/60 p-8 rounded-lg border border-green-500/20 backdrop-blur-sm tech-card">
                             <h4 class="text-xl font-bold text-white mb-4">
                                 <i class="fas fa-info-circle text-green-400 mr-2"></i>Quick Facts
                             </h4>
@@ -353,12 +434,13 @@
 
                 <div class="space-y-8">
                     <!-- Experience Item -->
-                    <div v-for="(exp, index) in experiences" :key="index" 
-                         class="experience-card rounded-lg shadow-lg p-6 hover:shadow-xl transition-all" 
-                         :data-aos="index % 2 === 0 ? 'fade-right' : 'fade-left'">
+                    <div v-for="(exp, index) in experiences" :key="index"
+                        class="experience-card rounded-lg shadow-lg p-6 hover:shadow-xl transition-all"
+                        :data-aos="index % 2 === 0 ? 'fade-right' : 'fade-left'">
                         <div class="flex flex-col md:flex-row md:items-start gap-4">
                             <div class="flex-shrink-0">
-                                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center pulse-glow">
+                                <div
+                                    class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center pulse-glow">
                                     <i :class="exp.icon" class="text-white text-xl"></i>
                                 </div>
                             </div>
@@ -370,8 +452,8 @@
                                 <p class="text-orange-400 font-medium mb-2">{{ exp.company }}</p>
                                 <p class="text-gray-300 leading-relaxed">{{ exp.description }}</p>
                                 <div class="flex flex-wrap gap-2 mt-4">
-                                    <span v-for="tech in exp.technologies" :key="tech" 
-                                          class="px-3 py-1 bg-green-900/40 border border-green-500/30 text-green-400 text-sm rounded-full hover:bg-green-800/40 transition-colors">
+                                    <span v-for="tech in exp.technologies" :key="tech"
+                                        class="px-3 py-1 bg-green-900/40 border border-green-500/30 text-green-400 text-sm rounded-full hover:bg-green-800/40 transition-colors">
                                         {{ tech }}
                                     </span>
                                 </div>
@@ -391,9 +473,10 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                    <div v-for="(category, index) in skillCategories" :key="index" 
-                         class="text-center tech-card p-6 rounded-lg" data-aos="fade-up" :data-aos-delay="index * 100">
-                        <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 pulse-glow">
+                    <div v-for="(category, index) in skillCategories" :key="index"
+                        class="text-center tech-card p-6 rounded-lg" data-aos="fade-up" :data-aos-delay="index * 100">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 pulse-glow">
                             <i :class="category.icon" class="text-white text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-3">{{ category.name }}</h3>
@@ -404,7 +487,8 @@
                 </div>
 
                 <!-- Technical Skills Progress Bars -->
-                <div class="bg-gradient-to-br from-slate-800/60 to-slate-900/60 p-8 rounded-lg border border-green-500/20 backdrop-blur-sm" data-aos="fade-up">
+                <div class="bg-gradient-to-br from-slate-800/60 to-slate-900/60 p-8 rounded-lg border border-green-500/20 backdrop-blur-sm"
+                    data-aos="fade-up">
                     <h3 class="text-2xl font-bold text-white mb-8 text-center neon-text">Technical Proficiency</h3>
                     <div class="grid md:grid-cols-2 gap-8">
                         <div v-for="skill in technicalSkills" :key="skill.name" class="mb-4">
@@ -413,8 +497,8 @@
                                 <span class="text-green-400 font-medium">{{ skill.level }}%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
-                                <div class="skill-bar h-3 rounded-full" 
-                                     :style="{width: showSkills ? skill.level + '%' : '0%'}"></div>
+                                <div class="skill-bar h-3 rounded-full"
+                                    :style="{width: showSkills ? skill.level + '%' : '0%'}"></div>
                             </div>
                         </div>
                     </div>
@@ -431,25 +515,26 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div v-for="(project, index) in projects" :key="index" 
-                         class="tech-card rounded-lg shadow-lg overflow-hidden border border-green-500/20" 
-                         data-aos="fade-up" :data-aos-delay="index * 100">
+                    <div v-for="(project, index) in projects" :key="index"
+                        class="tech-card rounded-lg shadow-lg overflow-hidden border border-green-500/20"
+                        data-aos="fade-up" :data-aos-delay="index * 100">
                         <div class="p-6">
-                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mb-4 pulse-glow">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mb-4 pulse-glow">
                                 <i :class="project.icon" class="text-white text-2xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-3">{{ project.name }}</h3>
                             <p class="text-gray-300 mb-4 leading-relaxed">{{ project.description }}</p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span v-for="tech in project.technologies" :key="tech" 
-                                      class="px-2 py-1 bg-green-900/40 border border-green-500/30 text-green-400 text-xs rounded-full">
+                                <span v-for="tech in project.technologies" :key="tech"
+                                    class="px-2 py-1 bg-green-900/40 border border-green-500/30 text-green-400 text-xs rounded-full">
                                     {{ tech }}
                                 </span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <span class="text-sm text-gray-400">{{ project.year }}</span>
-                                <a v-if="project.link" :href="project.link" target="_blank" 
-                                   class="text-orange-400 hover:text-orange-300 transition">
+                                <a v-if="project.link" :href="project.link" target="_blank"
+                                    class="text-orange-400 hover:text-orange-300 transition">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -466,7 +551,8 @@
                     <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
                     <div class="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
                     <p class="text-xl text-white/90 max-w-2xl mx-auto">
-                        Ready to collaborate on your next project? Let's discuss how I can help bring your ideas to life.
+                        Ready to collaborate on your next project? Let's discuss how I can help bring your ideas to
+                        life.
                     </p>
                 </div>
 
@@ -475,29 +561,34 @@
                         <h3 class="text-2xl font-bold text-white mb-8">Contact Information</h3>
                         <div class="space-y-6">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-4 pulse-glow">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-4 pulse-glow">
                                     <i class="fas fa-envelope text-white"></i>
                                 </div>
                                 <div>
                                     <p class="text-gray-300">Email</p>
-                                    <a href="mailto:christopherbartonjo@gmail.com" class="text-white font-medium hover:text-green-400 transition neon-text">
+                                    <a href="mailto:christopherbartonjo@gmail.com"
+                                        class="text-white font-medium hover:text-green-400 transition neon-text">
                                         christopherbartonjo@gmail.com
                                     </a>
                                 </div>
                             </div>
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mr-4 pulse-glow">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mr-4 pulse-glow">
                                     <i class="fas fa-phone text-white"></i>
                                 </div>
                                 <div>
                                     <p class="text-gray-300">Phone</p>
-                                    <a href="tel:+254724517084" class="text-white font-medium hover:text-orange-400 transition neon-orange">
+                                    <a href="tel:+254724517084"
+                                        class="text-white font-medium hover:text-orange-400 transition neon-orange">
                                         +254 724 517 084
                                     </a>
                                 </div>
                             </div>
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-4 pulse-glow">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-4 pulse-glow">
                                     <i class="fas fa-map-marker-alt text-white"></i>
                                 </div>
                                 <div>
@@ -510,16 +601,16 @@
                         <div class="mt-12">
                             <h4 class="text-xl font-bold text-white mb-6 neon-text">Let's Connect</h4>
                             <div class="flex space-x-4">
-                                <a href="mailto:christopherbartonjo@gmail.com" 
-                                   class="w-12 h-12 bg-green-600/20 hover:bg-green-600/40 border border-green-500/30 rounded-full flex items-center justify-center transition-all pulse-glow">
+                                <a href="mailto:christopherbartonjo@gmail.com"
+                                    class="w-12 h-12 bg-green-600/20 hover:bg-green-600/40 border border-green-500/30 rounded-full flex items-center justify-center transition-all pulse-glow">
                                     <i class="fab fa-google text-green-400"></i>
                                 </a>
-                                <a href="tel:+254724517084" 
-                                   class="w-12 h-12 bg-orange-600/20 hover:bg-orange-600/40 border border-orange-500/30 rounded-full flex items-center justify-center transition-all pulse-glow">
+                                <a href="tel:+254724517084"
+                                    class="w-12 h-12 bg-orange-600/20 hover:bg-orange-600/40 border border-orange-500/30 rounded-full flex items-center justify-center transition-all pulse-glow">
                                     <i class="fas fa-phone text-orange-400"></i>
                                 </a>
                                 <a href="./ChristopherBartonjoResume.pdf" target="_blank"
-                                   class="w-12 h-12 bg-green-600/20 hover:bg-green-600/40 border border-green-500/30 rounded-full flex items-center justify-center transition-all pulse-glow">
+                                    class="w-12 h-12 bg-green-600/20 hover:bg-green-600/40 border border-green-500/30 rounded-full flex items-center justify-center transition-all pulse-glow">
                                     <i class="fas fa-file-pdf text-green-400"></i>
                                 </a>
                             </div>
@@ -527,28 +618,29 @@
                     </div>
 
                     <div data-aos="fade-left">
-                        <div class="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-lg p-8 border border-green-500/20">
+                        <div
+                            class="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-lg p-8 border border-green-500/20">
                             <h3 class="text-2xl font-bold text-white mb-6 neon-text">Send a Message</h3>
                             <form @submit.prevent="sendMessage">
                                 <div class="space-y-4">
                                     <div>
                                         <input v-model="form.name" type="text" placeholder="Your Name" required
-                                               class="w-full px-4 py-3 bg-slate-700/50 border border-green-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all">
+                                            class="w-full px-4 py-3 bg-slate-700/50 border border-green-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all">
                                     </div>
                                     <div>
                                         <input v-model="form.email" type="email" placeholder="Your Email" required
-                                               class="w-full px-4 py-3 bg-slate-700/50 border border-green-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all">
+                                            class="w-full px-4 py-3 bg-slate-700/50 border border-green-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all">
                                     </div>
                                     <div>
                                         <input v-model="form.subject" type="text" placeholder="Subject" required
-                                               class="w-full px-4 py-3 bg-slate-700/50 border border-green-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all">
+                                            class="w-full px-4 py-3 bg-slate-700/50 border border-green-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all">
                                     </div>
                                     <div>
                                         <textarea v-model="form.message" rows="5" placeholder="Your Message" required
-                                                  class="w-full px-4 py-3 bg-slate-700/50 border border-green-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 resize-none transition-all"></textarea>
+                                            class="w-full px-4 py-3 bg-slate-700/50 border border-green-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 resize-none transition-all"></textarea>
                                     </div>
-                                    <button type="submit" 
-                                            class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition-all pulse-glow">
+                                    <button type="submit"
+                                        class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition-all pulse-glow">
                                         <i class="fas fa-paper-plane mr-2"></i>Send Message
                                     </button>
                                 </div>
@@ -567,7 +659,8 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center">
                     <p class="text-gray-300">
-                        © 2024 Christopher Bartonjo. Crafted with <i class="fas fa-heart text-green-400"></i> and <span class="text-green-400">Vue.js</span>
+                        © 2024 Christopher Bartonjo. Crafted with <i class="fas fa-heart text-green-400"></i> and <span
+                            class="text-green-400">Vue.js</span>
                     </p>
                     <div class="mt-4 flex justify-center space-x-2">
                         <i class="fas fa-microchip text-green-400 pulse-glow"></i>
@@ -583,7 +676,7 @@
 
     <script>
         const { createApp } = Vue;
-        
+
         createApp({
             data() {
                 return {
@@ -615,11 +708,20 @@
                         },
                         {
                             title: 'GIS Consultant',
-                            company: 'THORIUM',
+                            company: 'Kiwasco',
                             period: 'Nov 2024 - Present',
                             icon: 'fas fa-database',
                             description: 'Developed backend and frontend for customer identification survey data collection for KIWASCO under Lake Victoria South water project.',
                             technologies: ['Backend Development', 'Frontend Development', 'Data Analysis', 'Dashboard']
+                        },
+                        {
+                            title: 'Front End/Software Developer',
+                            company: 'Finplus',
+                            period: 'Nov 2024 - Present',
+                            icon: 'fas fa-code',
+                            description: `Worked on Agiza PWA ordering app for EABL and Diageo through Finplus group. It is a business to client  application where one can order drinks.The app includes security 
+                            features encryption and rate limiting`,
+                            technologies: ['Analytics tools', 'Security', 'SEO', 'PWA']
                         },
                         {
                             title: 'Full Stack Developer',
@@ -652,7 +754,7 @@
                         {
                             name: 'GIS & Remote Sensing',
                             icon: 'fas fa-globe',
-                            skills: ['Leaflet', 'OpenLayers', 'Geospatial Analysis', 'Satellite Imagery', 'OGC Standards']
+                            skills: ['Leaflet', 'OpenLayers', 'Maplibre', 'Geospatial Analysis', 'Satellite Imagery', 'OGC Standards']
                         },
                         {
                             name: 'Mobile Development',
@@ -663,12 +765,12 @@
                     technicalSkills: [
                         { name: 'JavaScript/Vue.js', level: 95 },
                         { name: 'Python', level: 90 },
-                        { name: 'Node.js', level: 88 },
+                        { name: 'Node.js', level: 95 },
                         { name: 'IoT Development', level: 92 },
                         { name: 'GIS/Remote Sensing', level: 85 },
                         { name: 'Mobile Development', level: 80 },
                         { name: 'Database Design', level: 87 },
-                        { name: 'DevOps/Docker', level: 75 }
+                        { name: 'DevOps/Docker', level: 85 }
                     ],
                     projects: [
                         {
@@ -693,7 +795,7 @@
                             icon: 'fas fa-satellite',
                             technologies: ['Vue.js', 'GIS', 'Remote Sensing'],
                             year: '2021-2023',
-                            link: 'https://misland.org'
+                            link: 'https://misland-africa.oss-online.org'
                         },
                         {
                             name: 'Tank Level Monitoring',
@@ -709,7 +811,8 @@
                             icon: 'fas fa-mobile-alt',
                             technologies: ['PWA', 'JavaScript', 'Security'],
                             year: '2021-2023',
-                            link: null
+                            link: null,
+                            link: 'https://ke.thebar.com/'
                         },
                         {
                             name: 'Smart Home Automation',
@@ -767,7 +870,7 @@
                         if (element) {
                             const offsetTop = element.offsetTop;
                             const height = element.offsetHeight;
-                            
+
                             if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
                                 this.activeSection = section;
                                 break;
@@ -782,9 +885,9 @@
                         `Name: ${this.form.name}\nEmail: ${this.form.email}\n\nMessage:\n${this.form.message}`
                     );
                     const mailtoLink = `mailto:christopherbartonjo@gmail.com?subject=${subject}&body=${body}`;
-                    
+
                     window.location.href = mailtoLink;
-                    
+
                     // Reset form
                     this.form = {
                         name: '',
@@ -797,4 +900,5 @@
         }).mount('#app');
     </script>
 </body>
+
 </html>

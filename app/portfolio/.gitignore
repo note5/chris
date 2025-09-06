@@ -1,8 +1,0 @@
-# Ignore parent directories and other project files
-../
-../../
-# Only include portfolio files
-!index.html
-!ChristopherBartonjoResume.pdf
-!.gitignore
-!README.md
