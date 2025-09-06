@@ -3,7 +3,7 @@
 A professional portfolio website showcasing my expertise as a Full Stack Developer and Mechatronics Engineer.
 
 ## 🚀 Live Website
-Visit the live website at: [https://note5.github.io](https://note5.github.io)
+Visit the live website at: [https://note5.github.io](https://note5.github.io/chris)
 
 ## 🛠️ Built With
 - **Vue 3** - JavaScript framework
